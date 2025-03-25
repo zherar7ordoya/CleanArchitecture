@@ -1,0 +1,15 @@
+﻿@model Primero.Models.PersonaViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a @Model.NombreAplicacion</h1>
+    <p>Un pequeño programa para aprender sobre ASP.NET Core</p>
+
+    <ul>
+        <li>Una persona reportando, nombre: @Model.Nombre, invertido = @Model.NombreInverso</li>
+        <li>Y la edad: @Model.Edad</li>
+    </ul>
+</div>
