@@ -1,0 +1,37 @@
+@startuml SimplifiedLayered (N-Tier) Architecture
+
+title Simplified Layered (N-Tier) Architecture
+
+skinparam packageStyle rectangle
+
+package "Presentation Layer" {
+  [UI / API Controllers] as Controllers
+}
+
+package "Application Layer" {
+  [Services] as Services
+}
+
+package "Domain Layer" {
+  [Entities] as Entities
+  [Domain Services] as DomainServices
+}
+
+package "Infrastructure Layer" {
+  component "Repositories" as Repositories
+  database "Persistence" as Persistence
+}
+
+' Flujo principal
+Controllers --> Services : <<calls>>
+Services --> Entities : <<uses>>
+Services --> DomainServices : <<uses>>
+Services --> Repositories : <<injects>>
+Repositories --> Persistence : <<connects>>
+
+' Inyección de dependencias (inversion of control)
+note right of Services
+  «inject» Repositories
+end note
+
+@enduml
