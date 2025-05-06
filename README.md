@@ -1,4 +1,4 @@
-# Arquitectura limpia de cero
+# Arquitectura Limpia (desde cero)
 
 Este repositorio visita todas las etapas de desarrollo hasta llegar al nivel de 
 desarollo profesional de arquitectura limpia con recomendaciones especiales de 
